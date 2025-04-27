@@ -2,7 +2,7 @@
   "name": "fresh-cart",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Omarzizo16.github.io/E-commerce---Frontend",
+  "homepage": "https://Omarzizo16.github.io/E-commerce---Frontend/",
   "type": "module",
   "scripts": {
     "dev": "vite",
