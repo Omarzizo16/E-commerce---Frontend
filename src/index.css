@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300;400;500;600&display=swap");
+
+:root {
+  --main-color: #0dd40d;
+  --main-color-dark: #0aa10a;
+  --light-color: #f0f3f2;
+  --dark-color: #121212;
+  --dark-secondary: #1e1e1e;
+  --shadow-light: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+  --shadow-dark: rgba(0, 0, 0, 0.4) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.24) 0px 4px 5px 0px, rgba(0, 0, 0, 0.22) 0px 1px 10px 0px;
+  --font-family: "Encode Sans Expanded", sans-serif;
+  --rating-color: #ffc908;
+  --text-light: #f0f3f2;
+  --text-dark: #121212;
+}
+
+body {
+  font-family: var(--font-family) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme (default) */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f0f3f2;
+  --text-primary: #121212;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --shadow: var(--shadow-light);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #f0f3f2;
+  --text-secondary: #a0a0a0;
+  --border-color: #333333;
+  --shadow: var(--shadow-dark);
+}
+
+/* Apply theme variables */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.rating-color {
+  color: var(--rating-color);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+a,
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product {
+  transition: all 0.3s ease;
+  background-color: var(--bg-primary);
+  border: solid 1px var(--border-color);
+}
+
+.product:hover {
+  box-shadow: var(--shadow);
+  border: solid 1px var(--main-color);
+  transform: translateY(-5px);
+}
+
+.product .btn {
+  transition: transform 0.5s, opacity 0.5s;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.product:hover .btn {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.font-sm {
+  font-size: 14px;
+}
+
+.text-main {
+  color: var(--main-color);
+}
+
+.bg-main {
+  background-color: var(--main-color) !important;
+}
+
+.bg-main-light {
+  background-color: var(--light-color) !important;
+}
+
+[data-theme="dark"] .bg-main-light {
+  background-color: var(--dark-secondary) !important;
+}
+
+.searchInput:focus {
+  border: 1px solid var(--main-color) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(13, 212, 13, 0.2) !important;
+}
+
+.related-products-slider .slick-dots li button:before {
+  font-size: 10px;
+  color: var(--main-color);
+}
+
+.related-products-slider .slick-dots li.slick-active button:before {
+  color: var(--main-color-dark);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Dark mode transition effects */
+.transition-theme {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Search input animation */
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.search-animation {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Nav link animations */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--main-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
