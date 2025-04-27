@@ -31,7 +31,7 @@ const routers = createBrowserRouter([{
   path: '', element: <Layout />, children: [
     { index: true, element: <Home /> },
     // Home
-    { path: 'home', element: <Home /> },
+    { path: 'https://omarzizo16.github.io/E-commerce---Frontend/', element: <Home /> },
 
     // Login
     { path: 'login', element: <Login /> },
